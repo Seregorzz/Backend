@@ -1,0 +1,1 @@
+[{"title":"PS5","price":1000,"thumbnail":"https://mxsonyb2c.vtexassets.com/arquivos/ids/263350/PS5_Fisica_DS.jpg?v=1751909001","id":1}]
