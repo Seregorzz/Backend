@@ -1,0 +1,3 @@
+[{"title":"Guitarra LTD","price":4000,"thumbnail":"https://karmamusic.mx/15925-large_default/esp-ltd-guitarra-electrica-signature-kirk-hammett-kh-3-spider-lkh3.jpg","id":1},
+{"title":"Neca","price":250,"thumbnail":"https://http2.mlstatic.com/D_NQ_NP_704398-MLM49436683541_032022-O.jpg","id":2},
+{"title":"PS5","price":1000,"thumbnail":"https://mxsonyb2c.vtexassets.com/arquivos/ids/263350/PS5_Fisica_DS.jpg?v=1751909001","id":3},{"title":"Mona Lisa","price":100,"thumbnail":"https://ichef.bbci.co.uk/news/640/cpsprodpb/17C16/production/_117320379_giocondacerca.jpg","id":4}]
