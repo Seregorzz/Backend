@@ -16,7 +16,7 @@ app.use( express.static('public'))
 const routerProductos = new Router()
 
 
-///// get
+
 
 routerProductos.get("/",  ( req, res ) => {
         res.send(productos)
@@ -32,7 +32,7 @@ routerProductos.get('/:id',  (req, res) => {
     }
 })
 
-///// post
+
 
 routerProductos.post('/', (req, res) => {
     const lengthProductos = productos.length
@@ -43,7 +43,7 @@ routerProductos.post('/', (req, res) => {
     res.json({ "nuevo id": nuevoId})
 })
 
-///// put
+
 
 routerProductos.put('/:id', (req, res) => {
     const { id } = req.params
@@ -61,7 +61,7 @@ routerProductos.put('/:id', (req, res) => {
     }
 })
 
-///// delete
+
 
 routerProductos.delete('/:id', (req, res) => {
     const { id } = req.params
