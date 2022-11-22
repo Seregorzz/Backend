@@ -1,0 +1,1 @@
+En mi opinion personal prefiero pug,se me hizo un poco mas facil de escribirlo como si fuera html,el que no me gusto tanto ahora fue handlebars
