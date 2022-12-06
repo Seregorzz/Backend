@@ -1,0 +1,60 @@
+[
+  {
+    "name": "ltd",
+    "price": "4848",
+    "description": "Para tocar Metalcore",
+    "code": "666",
+    "stock": "5",
+    "imgage": "https://cdn.connectsites.net/user_files/esp/site_assets/000/042/877/original.png?1642183526&height=1200&width=1200",
+    "id": 1
+  },
+  {
+    "name": "ESP",
+    "price": "5986",
+    "description": "Rock",
+    "code": "666",
+    "stock": "5",
+    "imgage": "https://cdn.connectsites.net/user_files/esp/site_assets/000/042/877/original.png?1642183526&height=1200&width=1200",
+    "id": 2
+  },
+  {
+    "name": "Gibson",
+    "price": "2598",
+    "description": "Heavy Metal",
+    "code": "666",
+    "stock": "3",
+    "imgage": "https://images.ctfassets.net/m8onsx4mm13s/1taJNWPD6h8dy9pEEq9c8e/ff78732df020dcde7c8f88bb4a83a0f9/Artboard_Copy.jpg",
+    "id": 3
+  },
+  {
+    "name": "Jackson",
+    "price": "258789",
+    "description": "Death Metal",
+    "code": "666",
+    "stock": "5",
+    "imgage": "https://m.media-amazon.com/images/I/61gli5NUeES._AC_SL1500_.jpg",
+    "id": 4
+  },
+  {
+    "name": "Caparison",
+    "price": "4848",
+    "description": "Mathcore",
+    "code": "666",
+    "stock": "8",
+    "imgage": "https://www.caparisonguitars.com/wp-content/uploads/2019/01/Horus-M3-EF-Amethyst-Front.jpg",
+    "id": 5
+  },
+  {
+    "name": "Fender",
+    "price": "2256",
+    "description": "Classic Rock",
+    "code": "666",
+    "stock": "5",
+    "imgage": "https://m.media-amazon.com/images/I/71BUQQ-b01L._AC_SL1500_.jpg",
+    "id": 6
+    
+    
+    
+  }
+  
+]
