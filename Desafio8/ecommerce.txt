@@ -1,0 +1,350 @@
+Microsoft Windows [Versión 10.0.22621.963]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\sereg>cd C:\Users\sereg\Downloads\Backend\Ejercicio 1 (Backend)\ecommerce
+
+C:\Users\sereg\Downloads\Backend\Ejercicio 1 (Backend)\ecommerce>mongosh
+Current Mongosh Log ID: 63a0e22765c60c24c3a6fc3d
+Connecting to:          mongodb://127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1
+Using MongoDB:          6.0.3
+Using Mongosh:          1.6.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+------
+   The server generated these startup warnings when booting
+   2022-12-19T16:13:24.774-06:00: Access control is not enabled for the database. Read and write access to data and configuration is unrestricted
+   2022-12-19T16:13:24.774-06:00: This server is bound to localhost. Remote systems will be unable to connect to this server. Start the server with --bind_ip <address> to specify which IP addresses it should serve responses from, or with --bind_ip_all to bind to all interfaces. If this behavior is desired, start the server with --bind_ip 127.0.0.1 to disable this warning
+------
+
+------
+   Enable MongoDB's free cloud-based monitoring service, which will then receive and display
+   metrics about your deployment (disk utilization, CPU, operation statistics, etc).
+
+   The monitoring data will be available on a MongoDB website with a unique URL accessible to you
+   and anyone you share the URL with. MongoDB may use this information to make product
+   improvements and to suggest MongoDB products and deployment options to you.
+
+   To enable free monitoring, run the following command: db.enableFreeMonitoring()
+   To permanently disable this reminder, run the following command: db.disableFreeMonitoring()
+------
+
+test> show databases
+admin    8.00 KiB
+config  12.00 KiB
+local    8.00 KiB
+test> use ecommerce
+switched to db ecommerce
+ecommerce> db.mensajes.insertMany([
+...   {email: "pepe@gmail.com", message: "hola soy pepe", timestamp: ISODate()},
+...   {email: "juan@gmail.com", message: "hola soy juan", timestamp: ISODate()},
+...   {email: "miguel@gmail.com", message: "hola soy miguel", timestamp: ISODate()},
+...   {email: "pepe@gmail.com", message: "necesito ayuda", timestamp: ISODate()},
+...   {email: "juan@gmail.com", message: "el precio del producto?", timestamp: ISODate()},
+...   {email: "pepe@gmail.com", message: "tienen en stock el producto", timestamp: ISODate()},
+...   {email: "miguel@gmail.com", message: "un momento", timestamp: ISODate()},
+...   {email: "juan@gmail.com", message: "ok", timestamp: ISODate()},
+...   {email: "pepe@gmail.com", message: "hay cupones de descuento?", timestamp: ISODate()},
+...   {email: "pepe@gmail.com", message: "espero, gracias", timestamp: ISODate()}
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63a0e2e7f09f8479421e2754"),
+    '1': ObjectId("63a0e2e7f09f8479421e2755"),
+    '2': ObjectId("63a0e2e7f09f8479421e2756"),
+    '3': ObjectId("63a0e2e7f09f8479421e2757"),
+    '4': ObjectId("63a0e2e7f09f8479421e2758"),
+    '5': ObjectId("63a0e2e7f09f8479421e2759"),
+    '6': ObjectId("63a0e2e7f09f8479421e275a"),
+    '7': ObjectId("63a0e2e7f09f8479421e275b"),
+    '8': ObjectId("63a0e2e7f09f8479421e275c"),
+    '9': ObjectId("63a0e2e7f09f8479421e275d")
+  }
+}
+ecommerce> db.productos.insertMany([
+...   {title: "TV", price: 700, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "Peluche de oso", price: 64, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "Teclado", price: 100, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "Silla", price: 150, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "Mesa portatil", price: 200, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "cocina", price: 150, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "jeans", price: 120, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "laptop", price: 2500, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "TV ultra", price: 900, thumbnail: "https://picsum.photos/200/300"},
+...   {title: "Celular", price: 800, thumbnail: "https://picsum.photos/200/300"},
+... ])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("63a0e2f6f09f8479421e275e"),
+    '1': ObjectId("63a0e2f6f09f8479421e275f"),
+    '2': ObjectId("63a0e2f6f09f8479421e2760"),
+    '3': ObjectId("63a0e2f6f09f8479421e2761"),
+    '4': ObjectId("63a0e2f6f09f8479421e2762"),
+    '5': ObjectId("63a0e2f6f09f8479421e2763"),
+    '6': ObjectId("63a0e2f6f09f8479421e2764"),
+    '7': ObjectId("63a0e2f6f09f8479421e2765"),
+    '8': ObjectId("63a0e2f6f09f8479421e2766"),
+    '9': ObjectId("63a0e2f6f09f8479421e2767")
+  }
+}
+ecommerce> db.mensajes.find()
+[
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e2754"),
+    email: 'pepe@gmail.com',
+    message: 'hola soy pepe',
+    timestamp: ISODate("2022-12-19T22:17:11.952Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e2755"),
+    email: 'juan@gmail.com',
+    message: 'hola soy juan',
+    timestamp: ISODate("2022-12-19T22:17:11.956Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e2756"),
+    email: 'miguel@gmail.com',
+    message: 'hola soy miguel',
+    timestamp: ISODate("2022-12-19T22:17:11.956Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e2757"),
+    email: 'pepe@gmail.com',
+    message: 'necesito ayuda',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e2758"),
+    email: 'juan@gmail.com',
+    message: 'el precio del producto?',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e2759"),
+    email: 'pepe@gmail.com',
+    message: 'tienen en stock el producto',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e275a"),
+    email: 'miguel@gmail.com',
+    message: 'un momento',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e275b"),
+    email: 'juan@gmail.com',
+    message: 'ok',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e275c"),
+    email: 'pepe@gmail.com',
+    message: 'hay cupones de descuento?',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  },
+  {
+    _id: ObjectId("63a0e2e7f09f8479421e275d"),
+    email: 'pepe@gmail.com',
+    message: 'espero, gracias',
+    timestamp: ISODate("2022-12-19T22:17:11.957Z")
+  }
+]
+ecommerce> db.productos.find()
+[
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e275e"),
+    title: 'TV',
+    price: 700,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e275f"),
+    title: 'Peluche de oso',
+    price: 64,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2760"),
+    title: 'Teclado',
+    price: 100,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2761"),
+    title: 'Silla',
+    price: 150,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2762"),
+    title: 'Mesa portatil',
+    price: 200,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2763"),
+    title: 'cocina',
+    price: 150,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2764"),
+    title: 'jeans',
+    price: 120,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2765"),
+    title: 'laptop',
+    price: 2500,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2766"),
+    title: 'TV ultra',
+    price: 900,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2767"),
+    title: 'Celular',
+    price: 800,
+    thumbnail: 'https://picsum.photos/200/300'
+  }
+]
+ecommerce> db.mensajes.estimatedDocumentCount()
+10
+ecommerce> db.productos.estimatedDocumentCount()
+10
+ecommerce> db.productos.insert({title: "Jackson", price: 1548, thumbnail: "https://m.media-amazon.com/images/I/61gli5NUeES._AC_SL1500_.jpg"})
+DeprecationWarning: Collection.insert() is deprecated. Use insertOne, insertMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedIds: { '0': ObjectId("63a0e3e2f09f8479421e2768") }
+}
+ecommerce> db.productos.find({price: {$lt: 1000}})
+[
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e275e"),
+    title: 'TV',
+    price: 700,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e275f"),
+    title: 'Peluche de oso',
+    price: 64,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2760"),
+    title: 'Teclado',
+    price: 100,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2761"),
+    title: 'Silla',
+    price: 150,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2762"),
+    title: 'Mesa portatil',
+    price: 200,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2763"),
+    title: 'cocina',
+    price: 150,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2764"),
+    title: 'jeans',
+    price: 120,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2766"),
+    title: 'TV ultra',
+    price: 900,
+    thumbnail: 'https://picsum.photos/200/300'
+  },
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2767"),
+    title: 'Celular',
+    price: 800,
+    thumbnail: 'https://picsum.photos/200/300'
+  }
+]
+ecommerce> db.productos.find({price: {$in: [1000, 3000]}})
+
+ecommerce> db.productos.find({price: {$gt: 3000}})
+
+ecommerce> db.productos.find({}, {"title": 1}).sort({price: 1}).skip(2).limit(1)
+[ { _id: ObjectId("63a0e2f6f09f8479421e2764"), title: 'jeans' } ]
+ecommerce> db.productos.update({},{$set:{stock:100}},{upsert:false,multi:true})
+DeprecationWarning: Collection.update() is deprecated. Use updateOne, updateMany, or bulkWrite.
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 11,
+  modifiedCount: 11,
+  upsertedCount: 0
+}
+ecommerce> db.productos.update({price: {$gt: 4000}},{$set:{stock:0}},{upsert:false,multi:true})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 0,
+  modifiedCount: 0,
+  upsertedCount: 0
+}
+ecommerce> db.productos.deleteMany({price: {$lt: 1000}})
+{ acknowledged: true, deletedCount: 9 }
+ecommerce> use admin
+switched to db admin
+admin> db.createUser({user: "pepe", pwd: "asd456", roles: [{role: "read", db: "ecommerce"}]})
+{ ok: 1 }
+admin>
+
+
+
+
+USUARIO
+
+
+Microsoft Windows [Versión 10.0.22621.963]
+(c) Microsoft Corporation. Todos los derechos reservados.
+
+C:\Users\sereg>mongosh -u pepe -p asd456
+Current Mongosh Log ID: 63a0e839e4713e29a120084d
+Connecting to:          mongodb://<credentials>@127.0.0.1:27017/?directConnection=true&serverSelectionTimeoutMS=2000&appName=mongosh+1.6.1
+Using MongoDB:          6.0.3
+Using Mongosh:          1.6.1
+
+For mongosh info see: https://docs.mongodb.com/mongodb-shell/
+
+test> use ecommerce
+switched to db ecommerce
+ecommerce> db.productos.find()
+[
+  {
+    _id: ObjectId("63a0e2f6f09f8479421e2765"),
+    title: 'laptop',
+    price: 2500,
+    thumbnail: 'https://picsum.photos/200/300',
+    stock: 100
+  },
+  {
+    _id: ObjectId("63a0e3e2f09f8479421e2768"),
+    title: 'Jackson',
+    price: 1548,
+    thumbnail: 'https://m.media-amazon.com/images/I/61gli5NUeES._AC_SL1500_.jpg',
+    stock: 100
+  }
