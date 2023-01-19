@@ -1,18 +1,39 @@
+
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
+
 div(class="products")
+
+ 
+ 
 
     if form
         h1(style="color:black")= `Bienvenido, ${username}`
+         
+  
+  
 
-        a(href="http://localhost:8080/api/session/logout")
-          span(style='color: red;') DESCONECTARSE
+        a(class='button' href="http://localhost:8080/api/session/logout")
+        
+          span(style='color: red;') 
+          
+          
+          
             
             
     else
+    
         a(href="http://localhost:8080/api/")
             h1(style="color:black")="Registrar nuevo producto"
+
+            
+            
     
     
     div(id="cardRow")
+
+   
 
         if products
             each product in products
@@ -22,8 +43,32 @@ div(class="products")
                     h3(class="price")="$" + product["price"]
 
 
+
+p#result
+
+button(onclick='redirect()' style="height:100px" ) Desconectarse
+script.
+  function redirect () {
+  var interval = setInterval(myURL, 1000);
+  var result = document.getElementById("result");
+  result.innerHTML = "<h1> Hasta Luego"
+  }
+  function myURL() {
+  document.location.href = 'http://localhost:8080/api/session/logout';
+  clearInterval(interval);
+  }
+
+  
+
+       
+            
+
+
+
 if !form
     style(type="text/css").
+
+        
         
         .products {
             background-color: transparent;
